@@ -1,0 +1,24 @@
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        if(list1==NULL) //Base case
+return list2;
+else if(list2==NULL) //Base case
+return list1;
+
+ if(list1->val<=list2->val)   //comparing 
+ {
+      ListNode* a=list1;
+     a->next=mergeTwoLists(list1->next,list2);   //Passing node accoding to compare
+     return a;
+     
+ }
+ else
+ {
+     ListNode* a=list2;
+     a->next=mergeTwoLists(list1,list2->next);
+     return a;
+     
+ }
+    }
+};
