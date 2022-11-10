@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int mySqrt(int x) {
+        int s=0;
+        int h=x,ans;
+        while(s<=h){
+            long long int mid=s+(h-s)/2;
+            if(mid*mid==x){ ans=mid; break;}
+            else if(mid*mid<x){s=mid+1;}
+            else h=mid-1;
+        }
+        return ans;
+    }
+};
