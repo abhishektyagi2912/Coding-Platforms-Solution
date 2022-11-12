@@ -1,0 +1,16 @@
+class Solution {
+public:
+    vector<vector<int>> construct2DArray(vector<int>& original, int m, int n) {
+        int n1=original.size();
+        vector<vector<int>> length;
+        if(n1!=m*n) return length;
+        vector<vector<int>> ans(m,vector<int>(n,0));
+        for(int i=0;i<n1;i++){
+            int r=i/n;
+            int c=i%n;
+            ans[r][c]=original[i];
+            
+        }
+        return ans;
+    }
+};
