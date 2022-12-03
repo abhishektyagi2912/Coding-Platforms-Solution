@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+		int n,k;
+		cin>>n>>k;
+		vector<int> nums(n);
+		for(int i=0;i<n;i++){
+			cin>>nums[i];
+		}
+		k%=n;
+		reverse(nums.begin(),nums.end());
+        reverse(nums.begin(),nums.begin()+k);
+        reverse(nums.begin()+k,nums.end());
+		for(int i=0;i<n;i++){
+			cout<<nums[i]<<" ";
+		}cout<<endl;
+	}
+	return 0;
+}
