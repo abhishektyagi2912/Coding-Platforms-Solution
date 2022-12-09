@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<int> diStringMatch(string s) {
+        vector<int> ans;
+        int max=s.size();
+        int min=0;
+        for(int i=0;i<s.size();i++){
+            if(s[i]=='I') ans.push_back(min++);
+            else ans.push_back(max--);
+        }
+        if(s.back()=='I') ans.push_back(min);
+        else ans.push_back(max--);
+        return ans;
+    }
+};
