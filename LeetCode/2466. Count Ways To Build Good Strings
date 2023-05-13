@@ -1,0 +1,21 @@
+class Solution {
+public:
+int mod=1000000007;
+    int sum(vector<int>&v, int t, int one, int zero){
+        if(t==0)return 1;
+        if(t<0)return 0;
+        if(v[t]!=-1)return v[t];
+        long long score;
+        score=sum(v,t-one, one, zero)+sum(v,t-zero,one,zero);
+        return v[t]=score%mod;
+
+    }
+    int countGoodStrings(int low, int high, int zero, int one) {
+        int ans=0;
+        vector<int>v(high+1,-1);
+        for(int i=low; i<=high; i++){
+            ans=(ans%mod+sum(v,i,one,zero)%mod)%mod;
+        }
+        return ans;
+    }
+};
